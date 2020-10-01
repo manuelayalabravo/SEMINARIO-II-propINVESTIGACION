@@ -1,35 +1,29 @@
 ---
 title: |
-  **MODELO GRAVITACIONAL DE COMERCIO REGIONAL BILATERAL**
+  **MODELO GRAVITACIONAL COMERCIO BILATERAL ENTRE REGIONES-CHILE**
 subtitle: |
-  EII-805 Metodología de la Investigación TALLER 04
+  SEMINARIO DE INVESTIGACIÓN II
 author: |
   | Manuel Ayala$^a$
   | $^a$Pontificia Universidad Católica de Valparaíso   
-    
-abstract: |
-   El presente taller 04 esta basado en el desarrollo del trabajo de investigación con marco en las ciencias económicas y bajo el contexto regional latinoamericano, a partir de un trabajo de investigación que tiene por objetivo principal identificar las razones que explican el comercio bilateral entre pares de paises y sus economías a través de un modelo gravitacional. Este taller da cuenta de las metodologías utilizadas para la busqued, extracción y recopilación de información qeu fundamenten lineamientos de marco teórico y conceptual del proyecto de investigación, considerando para esto bases de datos públicas y análisis bibliométrico de la situación actual sobre el tema de investigación abordado e incluyendo potenciales trabajos futuros.
-
-  
-   **Keywords:** Modelos Gravitacionales, Econometría Espacial, Comercio Latinoamericano.
-
-
 keywords: |
   "first keyword"
   "second keyword"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
+  
   pdf_document: 
-    citation_package: biblatex
+    citation_package: natbib
     keep_tex: yes
     fig_caption: yes
-
-classoption: twocolumn
+    latex_engine: xelatex
+##classoption: twocolumn
 header-includes: \usepackage{pgf,tikz}
 lang: es
 bibliography: ./references.bib
-csl: American Psychological Association 7th edition.csl
+csl: Nature Geoscience.csl
 linkcolor: blue
+fontsize: 12pt
 ---
 
 
@@ -38,38 +32,57 @@ knitr::opts_chunk$set(fig.path="Figs/", message=FALSE, warning=FALSE,
                       echo=FALSE, results="hide", fig.width=11)
 ```
 
-## Introducción
+## Marco Teórico
 
-Divulgar resultados de un estudio, publicar a la comunidad, contribuir al desarrollo con nuevo conocimiento, son cualidades que quedan plasmadas en un artículo científico[@vallina-hernandez_gravity_2020], el cual será al menos, leído por una revista para su aceptación a publicación, este proceso tiene en sus inicios etapas de indagación científica que debe ser profunda metódica y organizada de acuerdo al tema de investigación, el presente taller 04 se construye a partir de estas esta búsqueda organizada de información que lineará el marco teórico y conceptual de la investigación, mostrando las actividades realizadas para justificar la realización de la idea de investigación.
+El presente estudio pretende analizar y determinar las variables que mejor explican el comportamiento de los flujos de comercio bilateral entre regiones político administrativas de Chile, mediante la aplicación del Modelo Gravitacional. Este modelo ha sido ampliamente utilizado para predecir los flujos de comercio internacional [@vallina-hernandez_gravity_2020] y a nuestro conocimiento no existe estudio que explique y analice el flujo de comercio interno de Chile, permitiendo tener un instrumento analítico del comercio interno nacional.
 
-## Discución bibliográfica
+Chile en su Constitución Política divide el país en dieciséis unidades territoriales menores llamadas "Regiones", esta división pretende dar cumplimiento a los objetivos de gobierno y administración del país [@desarrollo_biblioteca_nodate](MEJORAR CITA). definiéndose como el primer nivel de organización del Estado de Chile, el cual por muchos años a pretendido descentralizar la administración en procesos de competencias y recursos desde un gobierno central a las administraciones subnacionales o unidades más pequeñas, entregándoles autonomía en la toma de decisiones y poder decisorio local acerca de materias delimitadas por la misma autoridad central (BCN 2018) (buscar referencia actualizada a la fecha del documento)[@chile_buscadorintegral_2014](MEJORAR CITA).
 
-Se realizó revisión de literatura desde dos distintos enfoques, considerando primero búsqueda y organización de información como una nube de ideas generales bajo la técnica de mapeo y las posibles teorías científicas que podrían participar en la intención de investigación científica planteada, luego de esta búsqueda amplia y revisión de la literatura encontrada, se acotó la información a tres teorías específicas de desarrollo, considerando que unen dos conceptos generales "espacial" y "tiempo" en el contexto econométrico. Esta recopilación de literatura se indexó a través de archivos digitales en dos sistemas contenedores, a través del software Zotero incluido en google Chrome y a través de carpetas organizadas y contenidas en carpetas y subcarpetas organizadas como técnica indexada. Estas técnicas se utilizaron complementarias para la organización de la búsqueda organizada y se alimentaron a través de fuentes abiertas de información, primeramente con motores de búsqueda en internet como google, dada la intención de obtener una visión general del estudio de interés de características transdiciplinario por el concepto teórico modelo econométrico espacial, para luego con un norte claro de dirección de búsqueda, estrechar la información a un carácter específico con otra forma de revisión a través de literatura científica citada en el artículo bajo estudio y recopilando información complementaria que entregara una visión del estado actual de la cituación científica respecto al tema de interés, utilizando para esto a motores especializados en estudios científicos como Google Scholar y Web of Science, de estos se rescató listado de texto formato *.txt ocupando keywords para rescatar el estado actual y relevante del problema plantaedo como investigación. Como tercera línea de información necesaria para fundar la investigación se realizó indagación de datos que poudieran sustentar el modelo de investigación, esto se realizó considerando los organismos gubernamentales que cuentan con bases de datos validas para fundar y resolver el modelo planteado como investigación. A continuación se presenta imagen de la busqueda indexada.
+Con un enfoque económico, los criterios para definir una región más allá de la división territorial entragada por el Estado de Chile no se encuentran del todo claro. De acuerdo a [@lopez_definicion_2018] "en Chile no existe un criterio específico para determinar los límites de cada una de las regiones político administrativas y tampoco información o análisis detallado de las economías de estas regiones". Considerando lo anterior, [@lopez_definicion_2018], realiza resumen de definiciones que se ajustan al enfoque económico de región:
 
-## Marco Conceptual y Teórico
+- Bendavid-Val (1974) (FALTA CITA) una región es un “área subnacional con al menos un lugar urbano y un hinterland (asentamiento en torno a un puerto) asociado, un área que es parte de un sistema más largo y en el que las relaciones económicas sobre su espacio interno son una preocupación del desarrollo económico”
 
-"La interacción espacial se podría caracterizar como el flujo resultante del movimiento a escala espacio temporal de mediano o largo  plazo de elementos, los cuales poseen un punto de origen y uno de destino, ambos con una localización"[@miranda_aplicacion_2018]. De esta definición se desprende la idea de interacción entre agentes como por ejemplo países, los cuales tienen ubicaciones espaciales y se relacionan con un flujo en el tiempo a través de actividades variadas entre ellos y esta interacción bajo un carácter espacial en una geografía específica y condicionante. Este concepto sustenta metodologías de estudio que consideran la interacción entre agentes, su identidad regional y sus flujos de información variada en intensidad y dirección, con la intensión de modelar estos flujos de comunicación en el tiempo, se han estudiado modelos que caractericen estas interacciones, de acuerdo a Miranda y Jara (2018) [@miranda_aplicacion_2018], a partir de los años 1930 W.J. Reilly, plantea uno de los primeros modelos de comercio basados en la Ley de Gravitación Universal adaptada a realidades sociales y en este caso en particular al contexto económico comercial entre agentes participantes de la interacción de flujos, planteando un modelo de la forma:
+- Emerson y Lamphear (1975) (FALTA CITA) una región es una “entidad económico espacial cuya configuración permite que se realicen enunciados descriptivos y analíticos significativos respecto a ella”. 
+
+- Sforzi (2012) (FALTA CITA) la región es un instrumento que sirve para la toma de decisiones políticas de acuerdo con los fenómenos de la economía.
+
+De las definiciones anteriores, un indicador descriptivo de la dinámica económica regional en Chile es el Producto Interno Bruto Regional (PIBR) que constituye una desagregación geográfica del PIB, de acuerdo a la división político-administrativa del país[@banco_central_de_chile_pib_2019].
+
+Sustentando la metodología del estudio en regiones politico administrativas y sus economías generan un comercio interno, existe un flujo de comercio de acuerdo al tamaño del las economías, que de la misma forma funcional de la Ley de Gravitación Universal, con las adaptaciones oportunas, podia ser aplicado a flujos de comercio internacional, de este modo, los flujos de comercio bilaterales entre dos países $i$ y $j$ podían explicarse por el tamaño económico de ambos países, medido por sus respectivos niveles de bienes y servicios y por la distancia que los separa [@zarzoso_estimacion_2003], en nuestro contexto regional, los flujos de comercio bilaterales entre dos regiones $i$ y $j$ pueden explicarse por el tamaño económico de ambas regiones, medida por los niveles del PIBR y la distancia que los separa.  
+
+planteando un modelo de la forma:
 
 $$
 F_{ij} = k (P_i P_j/DIST_{ij})
 $$
 
-Donde el $F_{ij}$ representa el flujo total entre las zonas $i$ y $j$, $k$ es una constante determinada por el ajuste del modelo, $P_i$ y $P_j$ son las masas de cada zona o región y por último $DIST_{ij}$ es la distancia que separa las dos zonas a estudiar.
+Donde el $F_{ij}$ representa el flujo total entre las zonas $i$ y $j$, $k$ es una constante determinada por el ajuste del modelo, $P_i$ y $P_j$ son las masas económias de cada zona o región y por último $DIST_{ij}$ es la distancia que separa las dos zonas a estudiar[@miranda_aplicacion_2018] Miranda 2018 y otros.
 
-Desde el punto de vista econométrico esta metodología gravitacional y de la mano con nuevos algoritmos y *software* permitíeron el cálculo y análisis comerciales, considerando y modelando en conjunto a variables espacios geográficos y temporales. En la actualidad se considera como una metodología ampliamente utilizada para la predicción de los flujos comerciales internacionales [@vallina-hernandez_gravity_2020]. 
-
-Una definición econométrica de modelo gravitatorio más sofisticada es la registrada por Mátyás (1997) [@matyas_proper_1997] la cual considera en su planteamiento el flujo comercial bilateral en el tiempo y espacio geográfico.
+El modelo gravitacional en su forma básica considerando regiones económicas y la distancia entre los agentes participantes no modela la realidad del flujo de comercio [@zarzoso_estimacion_2003], esto ha motivado a distintos autores a proponer distíntos modelos que buscan modelar la realidad del flujo comercial de acuerdo a las necesidades. Uno de estos modelos que considera un planteamiento econométrico correcto del modelo gravitatorio es el registrado por [@matyas_proper_1997] el cual considera en su planteamiento el flujo comercial bilateral de tres vías, en el tiempo con exportaciones e importaciones.
 
 $$ 
 \tiny ln EXP_{ijt}= \alpha_i+\lambda_t+\gamma_j+\beta_1 ln Y_{it}+\beta_2 ln Y_{jt}+\beta_3 DIST_{ij}+ \ldots+u_{ijt}
 $$
 
-Donde: $EXP_{ijt}$ es el volumen de comercio entre el país $i$ con el país $j$ al tiempo $t$; $Y_{it}$ es el Producto Interno Bruto del país $i$ al tiempo $t$; $DIST_{ij}$ corresponde a la distancia entre países;$(\alpha_i,\gamma_j)$ efectos en los países $(i,j)$; $\lambda_t$ es el efecto del tiempo de comercio en el tiempo $t$ y $u_{ijt} es el término de error del modelo.
+Donde: $EXP_{ijt}$ es el volumen de comercio entre la región comercial $i$ con la región comercial $j$ al tiempo $t$; $Y_{it}$ es el Producto Interno Bruto del regional $i$ al tiempo $t$; $DIST_{ij}$ corresponde a la distancia entre regiones;$(\alpha_i,\gamma_j)$ efectos en las regiones $(i,j)$; $\lambda_t$ es el efecto del tiempo de comercio en el tiempo $t$ y $u_{ijt} es el término de error del modelo.
 
-El modelo identifica el volumen de comercio bilateral entre países con un contexto regional de América Latina y el flujo comercial intra-regional de exportaciones [@vallina-hernandez_gravity_2020] a partir de información contenida en diferentes fuentes como el Banco Mundial, el Fondo Monetario Internacional, COMTRADE de Naciones Unidas entre otros.
+El modelo identifica el volumen de comercio bilateral entre países con un contexto regional de América Latina y el flujo comercial intra-regional de exportaciones [@vallina-hernandez_gravity_2020] a partir de información contenida en diferentes fuentes de datos.
 
-## Resultados del análisis bibliométrico
+Modelar y predecir los flujos de comercio en el contexto interno de Chile se consideran las siguientes variables:
 
-Se realizó a partir de las capacidades de los algoritmos generados en el lenguaje R "coword" y "Bibliometrix", un análisis bibliométrico del estado de la situación científica actual de las palabras claves keywords: **Econometric Modeling + spatial**, búsqueda de literatura realizada en la base artículos científicos Web of Science (WoS). La literatura relacionada encontrada de acuerdo a frase clave y considerando solo los años 2019 y 2020 de producción científica, se determinaron 384 artículos. A partir de esta base de datos obtenida en la WoS se extrajeron los datos en formato *PlainText* y modalidad *Full Report*, objeto de ingresar la información a análisis bibliométrico en los algorítmos Coword y Bibliometrix. 
 
-El resultado del análisis estadístico identificó como palabras más utilizadas a "Spatial" y "China", de acuerdo a la siguiente nube de palabras e histograma de frecuencias siguientes figuras 2 y 3.
+EXPORTACIONES por puerto de salida y puerto de llegada (aduanas)
+
+IMPORTACIONES por puerto de salida y puerto de ingreso (aduanas)
+
+PIB regional (Banco Central)
+
+DISTANCIA (tablas nacionales de distancias o GIS)
+
+POBLACIÓN (SUBDERE)
+
+FALTA...
+
+
+
+
